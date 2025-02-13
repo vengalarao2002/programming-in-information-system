@@ -24,3 +24,56 @@
     <button onclick="doIt1()">Submit</button>
     </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects and Classes</title>
+</head>
+<body>
+    <p>Objects and classes</p>
+    <p>Create a class, basket, that has a method addItem(product, qty)</p>
+    <p>It should have a method getCost(prices) that returns the cost of the items which have been added.</p>
+    <p>====</p>
+
+    <script>
+        // Class definition
+        class Basket {
+            constructor() {
+                this.items = [];
+            }
+
+            // Method to add items to the basket
+            addItem(product, qty) {
+                this.items.push({ product, qty });
+            }
+
+            // Method to calculate the total cost
+            getCost(prices) {
+                let total = 0;
+                this.items.forEach(item => {
+                    if (prices[item.product]) {
+                        total += prices[item.product] * item.qty;
+                    }
+                });
+                return total;
+            }
+        }
+
+        // Example usage
+        const prices = {
+            apple: 1.5,
+            banana: 0.75,
+            orange: 2.0
+        };
+
+        const basket = new Basket();
+        basket.addItem('apple', 3);  // Adding 3 apples
+        basket.addItem('banana', 2); // Adding 2 bananas
+
+        const totalCost = basket.getCost(prices);
+        console.log("Total Cost: $" + totalCost); // Display total cost in console
+    </script>
+</body>
+</html>
