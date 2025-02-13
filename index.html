@@ -1,1 +1,26 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises</title>
+    <script>
+        // Exercise 1: Baggage Weight Check
+        function doIt1() {
+            let x = document.getElementById("bw").value;
+            if (x > 15) {
+                alert("Your baggage is overweight!");
+            } else {
+                alert("Your baggage is within the weight limit.");
+            }
+        }
+    </script>
+</head>
+    <body>
+        <!-- Exercise 1: Baggage Weight Check -->
+    <p>Exercise 1: Baggage Weight Check</p>
+    <p>Please enter your baggage weight:</p>
+    <input type="text" id="bw" width="6">
+    <button onclick="doIt1()">Submit</button>
+    </body>
+</html>
